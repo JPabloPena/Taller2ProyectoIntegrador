@@ -15,13 +15,13 @@ def temphum(request):
             # Crea el json para realizar la petición POST al Web Service
             args = {'type': 'ph', 'value': value, 'latitud': latitud, 'mes': mes}
             # response = requests.post('http://127.0.0.1:8000/temphums/', args)
-            response = requests.post('http://pi1-eafit-jppenaf-fr.azurewebsites.net/temphums/', args)
+            response = requests.post('http://pi1-eafit-jppenaf.azurewebsites.net/temphums/', args)
             # Convierte la respuesta en JSON
             temphum_json = response.json()
 
     # Realiza una petición GET al Web Services
     # response = requests.get('http://127.0.0.1:8000/temphums/')
-    response = requests.get('http://pi1-eafit-jppenaf-fr.azurewebsites.net/temphums/')
+    response = requests.get('http://pi1-eafit-jppenaf.azurewebsites.net/temphums/')
     # Convierte la respuesta en JSON
     temphums = response.json()
     # Rederiza la respuesta en el template measure
